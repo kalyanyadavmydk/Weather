@@ -52,5 +52,9 @@
   "engines": {
     "node": "v8.11.4",
     "npm": "5.8.0"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.",
+  "main": "karma.conf.js",
+  "author": "",
+  "license": "ISC"
 }
