@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+      <input type="text" class="col-sm-12 col-md-2 search col-lg-2 " [(ngModel)]="place">
+      <button  class="col-sm-12 col-md-2  col-lg-2" type="submit" (click)="weather()">Search</button>
+    </nav><br><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class=" col-sm-1 col-md-3 col-lg-3"></div>
+        <div class="col-sm-9 col-lg-7 col-md-7 main-body">
+          <div [style.background-image]="getimage()" style="border: 5px solid white; border-radius: 25px;" class="sub-body1">
+            <span>
+              <p>{{weather_details.current.temperature}} <sup>℃</sup></p>
+              <h6>{{weather_details.current.weather_descriptions}}</h6>
+            </span>
+            <h5>{{weather_details.location.localtime}}</h5>
+          </div>
+          <div class="sub-body2">
+              <!-- <img src="https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"> -->
+              <h4 ><span>Temperature :</span> {{weather_details.current.temperature}}</h4>
+              <h4><span>FeelsLike : </span>{{weather_details.current.feelslike}}</h4>
+              <h4><span> Name/Location :</span> {{weather_details.location.name}}</h4>
+              <h4><span>Region :</span> {{weather_details.location.region}}</h4>
+              <h4><span>Country :</span> {{weather_details.location.country | uppercase}}</h4>
+          </div>
+        </div>
+        <div class=" col-lg-3"></div>
+      </div>
+    </div><br><br>
+  </body>
+</html>
